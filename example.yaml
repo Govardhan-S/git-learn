@@ -1,0 +1,86 @@
+# Sample YAML file for beginners
+
+# Simple key-value pairs
+name: "John Doe"
+age: 25
+is_student: true
+
+# Nested structures (like dictionaries or objects)
+address:
+  street: "123 Main St"
+  city: "Springfield"
+  zip_code: 12345
+
+# Lists (like arrays)
+skills:
+  - "Python"
+  - "JavaScript"
+  - "DevOps"
+  - "Cloud Computing"
+
+# List of dictionaries (objects)
+education:
+  - degree: "Bachelor of Science"
+    field: "Computer Science"
+    university: "State University"
+    year: 2020
+  - degree: "Master of Science"
+    field: "Software Engineering"
+    university: "Tech Institute"
+    year: 2023
+
+# Nested lists and dictionaries
+projects:
+  - name: "E-commerce Website"
+    languages: ["JavaScript", "React", "Node.js"]
+    details:
+      description: "Built a scalable e-commerce platform"
+      duration_months: 6
+      completed: true
+  - name: "AI Chatbot"
+    languages: ["Python", "TensorFlow"]
+    details:
+      description: "Developed an AI-based chatbot"
+      duration_months: 4
+      completed: false
+
+# Scalars and multiple-line strings
+bio: |
+  John is a software developer with a passion for cloud computing,
+  DevOps practices, and modern software development methodologies.
+  He enjoys working on open-source projects and exploring new technologies.
+
+# Boolean, integer, and floating-point values
+settings:
+  notifications: true
+  max_retries: 5
+  timeout_seconds: 15.5
+
+# Aliases and references (reusing values)
+defaults: &default_settings
+  theme: "light"
+  language: "en"
+  show_tutorial: true
+
+user_settings:
+  <<: *default_settings # Merging default settings
+  theme: "dark" # Overriding specific values
+
+# Conditional structure using optional keys
+feature_flags:
+  enable_feature_x: true
+  enable_feature_y: false
+  # Optional: Uncomment to enable feature Z
+  # enable_feature_z: true
+
+# Environment variables and empty values
+env_variables:
+  database_url: "postgres://localhost:5432/mydb"
+  cache_enabled: ~ # YAML null value, indicates unset
+  api_key: "abc123"
+
+# Comments explaining each section (YAML comments start with #)
+# This section is for debugging purposes
+debug:
+  log_level: "info"
+  trace_execution: false
